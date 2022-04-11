@@ -33,7 +33,7 @@ public class sortingHandler {
      */
     public long runHeapNormal(int[] unsortedArray, int count, int fileFlag) throws IOException {
         long startTime = System.nanoTime();
-        int[] sortedArray = heapSort.sort(unsortedArray);
+        int[] sortedArray = heapSort.sort(unsortedArray, 0);
         long endTime = System.nanoTime();
 
         if(fileFlag == 0){
@@ -49,7 +49,7 @@ public class sortingHandler {
 
     public long runHeapReverse(int[] unsortedArray, int count, int fileFlag) throws IOException {
         long startTime = System.nanoTime();
-        int[] sortedArray = heapSort.sort(unsortedArray);
+        int[] sortedArray = heapSort.sort(unsortedArray, 1);
         long endTime = System.nanoTime();
 
         if(fileFlag == 0){
