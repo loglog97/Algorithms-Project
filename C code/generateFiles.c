@@ -12,7 +12,7 @@
 void generateSmall(int length, int i){
     char *filename = malloc(255*sizeof(char));
 
-    int res = sprintf(filename, "smallFiles/small%d.txt", i+1);
+    int res = sprintf(filename, "/Algorithms-Project/src/main/unsortedFiles/smallFiles/small%d.txt", i+1);
     if(res > 0){
         FILE *fp = fopen(filename, "w");
         int count = 0;

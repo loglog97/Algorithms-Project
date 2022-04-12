@@ -27,14 +27,14 @@ public class Driver {
 
     public static void main(String[] args) throws IOException {
         /* uncomment this to generate the sorted files */
-        //generateSorted();
+        generateSorted();
 
         SortedFileHandler sorted = new SortedFileHandler("normal");
         SortedFileHandler sorted2 = new SortedFileHandler("reverse");
         UnsortedFileHandler unsorted = new UnsortedFileHandler();
         //compute unstored files
-        unsorted.computeSmallUnsorted();
-        unsorted.computeMediumUnsorted();
+        //unsorted.computeSmallUnsorted();
+        /*unsorted.computeMediumUnsorted();
         unsorted.computeLargeUnsorted();
         //compute already sorted files
         sorted.computeSmallSorted();
@@ -43,6 +43,6 @@ public class Driver {
         //Start computing reverse sorted files
         sorted2.computeSmallSorted();
         sorted2.computeMediumSorted();
-        sorted2.computeLargeSorted();
+        sorted2.computeLargeSorted(); */
     }
 }

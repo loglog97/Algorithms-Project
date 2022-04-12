@@ -26,13 +26,13 @@ public class UnsortedFileHandler {
     }
 
     public static String toStringSmallUnsorted(int count){
-        return "unsortedFiles\\smallFiles\\small" + count + ".txt";
+        return "src/main/unsortedFiles/smallFiles/small" + count + ".txt";
     }
     public static String toStringMediumUnsorted(int count){
-        return "unsortedFiles\\mediumFiles\\medium" + count + ".txt";
+        return "src/main/unsortedFiles/mediumFiles/medium" + count + ".txt";
     }
     public static String toStringLargeUnsorted(int count){
-        return "unsortedFiles\\largeFiles\\large" + count + ".txt";
+        return "src/main/unsortedFiles/largeFiles/large" + count + ".txt";
     }
 
     /**

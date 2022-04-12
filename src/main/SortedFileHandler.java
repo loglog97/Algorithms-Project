@@ -28,13 +28,13 @@ public class SortedFileHandler {
         output.close();
     }
     public static String toStringSmallSorted(int count, String filetype){
-        return "sortedFiles\\"+ filetype +"\\smallFiles\\small" + count + ".txt";
+        return "src/main/sortedFiles/"+ filetype +"/smallFiles/small" + count + ".txt";
     }
     public static String toStringMediumSorted(int count, String filetype){
-        return "sortedFiles\\" + filetype +"\\mediumFiles\\medium" + count + ".txt";
+        return "src/main/sortedFiles/" + filetype +"/mediumFiles/medium" + count + ".txt";
     }
     public static String toStringLargeSorted(int count, String filetype){
-        return "sortedFiles\\" + filetype + "\\largeFiles\\large" + count + ".txt";
+        return "src/main/sortedFiles/" + filetype + "/largeFiles/large" + count + ".txt";
     }
 
     /**
