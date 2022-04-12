@@ -12,6 +12,12 @@ public class SortedFileGenerator {
     private String fileType;
     private int flag; //0 if normal, 1 if reverse
     Random rand = new Random();
+
+    /**
+     * Constructor for the generator
+     * @param fileType - whether its normal or reverse sorted for storage
+     * @param flag - 0 for normal 1 for reverse
+     */
     public SortedFileGenerator(String fileType, int flag){
         this.fileType = fileType;
         this.flag = flag;

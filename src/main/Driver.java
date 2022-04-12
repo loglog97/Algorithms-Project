@@ -2,7 +2,6 @@ package main;
 
 
 import java.io.IOException;
-import java.util.Arrays;
 
 /**
  * Driver for Sorting Project
@@ -27,12 +26,6 @@ public class Driver {
     }
 
     public static void main(String[] args) throws IOException {
-
-        //int[] arr = {1,2,3,4,5};
-        //quickSort.sort(arr, 0, arr.length - 1);
-        //heapSort.buildMaxHeap(arr, arr.length - 1);
-        //System.out.println(Arrays.toString(arr));
-
         /* uncomment this to generate the sorted files */
         //generateSorted();
 
