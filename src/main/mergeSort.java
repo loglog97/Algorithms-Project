@@ -1,5 +1,9 @@
 package main;
 
+/**
+ * Merge Sort Clas
+ * @author Logan Cole
+ */
 public class mergeSort {
 
     /**
@@ -16,7 +20,7 @@ public class mergeSort {
         int j = 0; //second half
         int k = 0; //mainArray
         while(i < firstLength && j < secondLength){
-            if(flag == 0) {
+            if(flag == 0){
                 if(first[i] < second[j]){ //change the sign to sort in reverse order
                     main[k] = first[i];
                     i++;
@@ -47,6 +51,12 @@ public class mergeSort {
         }
     }
 
+    /**
+     * Main MergeSort runner
+     * @param mainArray - the array to be sorted
+     * @param mainLength - the length of the main array
+     * @param flag - whether it sorts in normal or reverse order
+     */
     public static void mergeS(int[] mainArray, int mainLength, int flag){
         if(mainLength > 1) {
             int midPoint = mainLength / 2;
@@ -65,6 +75,7 @@ public class mergeSort {
 
             mergeS(firstHalf, midPoint, flag);
             mergeS(secondHalf, secondLength, flag);
+
             merge(mainArray, firstHalf, secondHalf, midPoint, secondLength, flag);
         }
     }

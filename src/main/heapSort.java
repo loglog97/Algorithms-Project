@@ -1,5 +1,9 @@
 package main;
 
+/**
+ * Heap Sort class
+ * @author Logan Cole
+ */
 public class heapSort {
     /**
      * Sorts an array using heap sort
@@ -15,9 +19,7 @@ public class heapSort {
         }
 
         for(int i = length; i >= 0; i--){
-            int tmp = mainArray[0];
-            mainArray[0] = mainArray[i];
-            mainArray[i] = tmp;
+            swap(mainArray, 0, i);
             if(flag == 0){
                 buildMaxHeap(mainArray, i - 1); //when this is called, whatever numbers have been sorted wont be used when re-heapifying
             }else{
@@ -85,5 +87,17 @@ public class heapSort {
             mainArray[k] = v;
             i--;
         }
+    }
+
+    /**
+     * Normal swap method
+     * @param array - array to have values swapped in
+     * @param a - index 1
+     * @param b - index 2
+     */
+    public static void swap(int[] array, int a, int b){
+        int tmp = array[a];
+        array[a] = array[b];
+        array[b] = tmp;
     }
 }

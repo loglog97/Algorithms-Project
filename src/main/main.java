@@ -1,9 +1,22 @@
 package main;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Driver for Sorting Project
+ * @author Logan Cole
+ */
 public class main {
+
+    /**
+     * Writes the times out to the files
+     * @param filename - The name of the file to write to
+     * @param fileType - The algorithm it writing for
+     * @param times - the array of times for all 30 files
+     * @throws IOException - if it can't write to the files
+     */
     public static void writer(String filename, String fileType, long[] times) throws IOException{
         BufferedWriter output = new BufferedWriter(new FileWriter(filename, true));
         output.write(fileType);
@@ -63,7 +76,7 @@ public class main {
             heapTimesReverse[i-1] = sort.runHeapReverse(unsortedArray, i, 0);
 
             mergeTimes[i-1] = sort.runMergeNormal(unsortedArray, i, 0);
-            mergeTimesReverse[i-1] = sort.runMergeNormal(unsortedArray, i, 0);
+            mergeTimesReverse[i-1] = sort.runMergeReverse(unsortedArray, i, 0);
 
             quickTimes[i-1] = sort.runQuickNormal(unsortedArray, i, 0);
             quickTimesReverse[i-1] = sort.runQuickReverse(unsortedArray, i, 0);
@@ -73,11 +86,15 @@ public class main {
         writer("smallFileTimes.txt", "Small Heapsort Reverse", heapTimesReverse);
         writer("smallFileTimes.txt", "Small MergeSort Ascending", mergeTimes);
         writer("smallFileTimes.txt", "Small MergeSort Reverse", mergeTimesReverse);
-        //writer("smallFileTimes.txt", "Small QuickSort Ascending", quickTimes);
-        //writer("smallFileTimes.txt", "Small QuickSort Ascending", quickTimesReverse);
+        writer("smallFileTimes.txt", "Small QuickSort Ascending", quickTimes);
+        writer("smallFileTimes.txt", "Small QuickSort Ascending", quickTimesReverse);
 
     }
 
+    /**
+     * Runs the algorithms for medium files and writes out the times.
+     * @throws IOException - if it can't write to the file
+     */
     public void computeMedium() throws IOException {
         long[] heapTimes = new long[30];
         long[] mergeTimes = new long[30];
@@ -90,7 +107,7 @@ public class main {
             int Size = 100000;
             int[] unsortedArray = new int[Size];
             try{
-                File fp = new File(toStringSmall(i));
+                File fp = new File(toStringMedium(i));
                 Scanner reader = new Scanner(fp);
                 int counter = 0;
                 String line;
@@ -109,20 +126,24 @@ public class main {
             heapTimesReverse[i-1] = sort.runHeapReverse(unsortedArray, i, 1);
 
             mergeTimes[i-1] = sort.runMergeNormal(unsortedArray, i, 1);
-            mergeTimesReverse[i-1] = sort.runMergeNormal(unsortedArray, i, 1);
+            mergeTimesReverse[i-1] = sort.runMergeReverse(unsortedArray, i, 1);
 
-            //quickTimes[i-1] = sort.runQuickNormal(unsortedArray, i, 1);
-            //quickTimesReverse[i-1] = sort.runQuickReverse(unsortedArray, i, 1);
+            quickTimes[i-1] = sort.runQuickNormal(unsortedArray, i, 1);
+            quickTimesReverse[i-1] = sort.runQuickReverse(unsortedArray, i, 1);
 
         }
         writer("mediumFileTimes.txt", "Medium Heapsort Ascending", heapTimes);
         writer("mediumFileTimes.txt", "Medium Heapsort Reverse", heapTimesReverse);
         writer("mediumFileTimes.txt", "Medium MergeSort Ascending", mergeTimes);
         writer("mediumFileTimes.txt", "Medium MergeSort Reverse", mergeTimesReverse);
-       // writer("mediumFileTimes.txt", "Medium QuickSort Ascending", quickTimes);
-       // writer("mediumFileTimes.txt", "Medium QuickSort Ascending", quickTimesReverse);
+        writer("mediumFileTimes.txt", "Medium QuickSort Ascending", quickTimes);
+        writer("mediumFileTimes.txt", "Medium QuickSort Ascending", quickTimesReverse);
     }
 
+    /**
+     * Runs and writes times for the Large files for all algorithms
+     * @throws IOException
+     */
     public void computeLarge() throws IOException {
         long[] heapTimes = new long[30];
         long[] mergeTimes = new long[30];
@@ -135,7 +156,7 @@ public class main {
             int smallSize = 1000000;
             int[] unsortedArray = new int[smallSize];
             try{
-                File fp = new File(toStringSmall(i));
+                File fp = new File(toStringLarge(i));
                 Scanner reader = new Scanner(fp);
                 int counter = 0;
                 String line;
@@ -154,7 +175,7 @@ public class main {
             heapTimesReverse[i-1] = sort.runHeapReverse(unsortedArray, i, 2);
 
             mergeTimes[i-1] = sort.runMergeNormal(unsortedArray, i, 2);
-            mergeTimesReverse[i-1] = sort.runMergeNormal(unsortedArray, i, 2);
+            mergeTimesReverse[i-1] = sort.runMergeReverse(unsortedArray, i, 2);
 
             quickTimes[i-1] = sort.runQuickNormal(unsortedArray, i, 2);
             quickTimesReverse[i-1] = sort.runQuickReverse(unsortedArray, i, 2);
@@ -167,15 +188,17 @@ public class main {
         writer("largeFileTimes.txt", "Large QuickSort Ascending", quickTimes);
         writer("largeFileTimes.txt", "Large QuickSort Ascending", quickTimesReverse);
     }
+
     public static void main(String[] args){
 
-        int[] arr = {4,3,2,5,8,10,11,23,0,1,3};
-        //quickSort.sort(arr);
+        //int[] arr = {4,3,2,5,8,10,11,23,0,1,3};
+        //quickSort.sort(arr, 0, arr.length - 1);
+        //heapSort.sort(arr, 0);
         //System.out.println(Arrays.toString(arr));
-       /* try{
+        try{
             computeSmall();
         }catch(IOException e){
             e.printStackTrace();
-        } */
+        }
     }
 }
