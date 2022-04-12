@@ -1,0 +1,18 @@
+Small Heapsort Unsorted
+5 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Small MergeSort Unsorted
+2 5 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Small QuickSort Unsorted
+50 19 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 25 24 24 34 24 24 24 24 24 
+Small Heapsort Sorted normal
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Small MergeSort Sorted normal
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Small QuickSort Sorted normal
+24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 25 24 25 24 24 24 24 24 
+Small Heapsort Sorted reverse
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Small MergeSort Sorted reverse
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+Small QuickSort Sorted reverse
+24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 24 
