@@ -12,7 +12,7 @@ public class sortingHandler {
      */
     public long runHeapNormal(int[] unsortedArray){
         long startTime = System.nanoTime();
-        int[] sortedArray = heapSort.sort(unsortedArray);
+        heapSort.heapsort(unsortedArray);
         long endTime = System.nanoTime();
 
         return (endTime - startTime) / 1000000; //returns miliseconds
@@ -39,7 +39,7 @@ public class sortingHandler {
      */
     public long runQuickNormal(int[] unsortedArray){
         long startTime = System.nanoTime();
-        quickSort.sort(unsortedArray, 0, unsortedArray.length - 1);
+        quickSort.quicksort(unsortedArray, 0, unsortedArray.length - 1);
         long endTime = System.nanoTime();
 
         return (endTime - startTime) / 1000000; //returns miliseconds

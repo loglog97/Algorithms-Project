@@ -118,7 +118,7 @@ public class UnsortedFileHandler {
      * run all files, save times for each algorithm, write all in one shot for unsorted
      * @throws IOException
      */
-    public static void computeSmallUnsorted() throws IOException {
+    public void computeSmallUnsorted() throws IOException {
         long[] heapTimes = new long[30];
         long[] mergeTimes = new long[30];
         long[] quickTimes = new long[30];
