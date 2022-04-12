@@ -13,29 +13,18 @@ public class mergeSort {
      * @param second - right half
      * @param firstLength - left half length
      * @param secondLength - right half length
-     * @param flag - determines if we are soring in normal or reverse order 0 is normal, 1 is reverse
      */
-    public static void merge(int[] main, int[] first, int[] second, int firstLength, int secondLength, int flag){
+    public static void merge(int[] main, int[] first, int[] second, int firstLength, int secondLength){
         int i = 0; //first half
         int j = 0; //second half
         int k = 0; //mainArray
         while(i < firstLength && j < secondLength){
-            if(flag == 0){
-                if(first[i] < second[j]){ //change the sign to sort in reverse order
-                    main[k] = first[i];
-                    i++;
-                }else{
-                    main[k] = second[j];
-                    j++;
-                }
+            if(first[i] < second[j]){ //change the sign to sort in reverse order
+                main[k] = first[i];
+                i++;
             }else{
-                if(first[i] > second[j]){ //change the sign to sort in reverse order
-                    main[k] = first[i];
-                    i++;
-                }else{
-                    main[k] = second[j];
-                    j++;
-                }
+                main[k] = second[j];
+                j++;
             }
             k++;
         }
@@ -55,9 +44,8 @@ public class mergeSort {
      * Main MergeSort runner
      * @param mainArray - the array to be sorted
      * @param mainLength - the length of the main array
-     * @param flag - whether it sorts in normal or reverse order
      */
-    public static void mergeS(int[] mainArray, int mainLength, int flag){
+    public static void mergeS(int[] mainArray, int mainLength){
         if(mainLength > 1) {
             int midPoint = mainLength / 2;
             int secondLength = mainLength - midPoint;
@@ -73,10 +61,10 @@ public class mergeSort {
                 }
             }
 
-            mergeS(firstHalf, midPoint, flag);
-            mergeS(secondHalf, secondLength, flag);
+            mergeS(firstHalf, midPoint);
+            mergeS(secondHalf, secondLength);
 
-            merge(mainArray, firstHalf, secondHalf, midPoint, secondLength, flag);
+            merge(mainArray, firstHalf, secondHalf, midPoint, secondLength);
         }
     }
 }

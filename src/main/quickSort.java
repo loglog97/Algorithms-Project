@@ -5,7 +5,8 @@ package main;
  * @author Logan Cole
  */
 public class quickSort{
-    static int i, j;
+    static int i = 0;
+    static int j = 0;
     /**
      * Start of Quick Sort
      * @param mainArray - unsorted array
@@ -32,18 +33,15 @@ public class quickSort{
         int leftCount = left - 1;
         int rightCount = right;
         int endValue = mainArray[right];
-        i = left; j = right - 1;
+        i = left - 1; j = right;
         boolean isDone = false;
 
         while (!isDone) {
-            while (mainArray[i] < endValue){
-                i++;
-            }
-            while (endValue < mainArray[j]){
+            while (mainArray[++i] < endValue);
+            while (endValue < mainArray[--j]){
                 if (j == left){ //if it reaches the beginning of the array
                     break;
                 }
-                j--;
             }
             if (i >= j){
                 isDone = true;
@@ -62,14 +60,12 @@ public class quickSort{
         swap(mainArray, i, right); //move pivot
 
         j = i - 1;
-        i++;
-        for (int lCount = left; lCount < leftCount; lCount++){
+        for (int lCount = left; lCount < leftCount; j--, lCount++){
             swap(mainArray, lCount, j);
-            j--;
         }
-        for (int rCount = right - 1; rCount > rightCount; rCount--){
+        i = i + 1;
+        for (int rCount = right - 1; rCount > rightCount; i++, rCount--){
             swap(mainArray, i, rCount);
-            i++;
         }
     }
 
